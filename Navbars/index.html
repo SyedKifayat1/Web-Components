@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Component</title>
+  <link rel="stylesheet" href="Navbar.css">
+</head>
+<body>
+  <nav class="navbar flex1">
+    <!-- Overlay for Sidebar -->
+    <div class="overlay" onclick="toggleSidebar()" style="display: none;"></div>
+
+    <!-- Logo -->
+    <div class="logo ">
+        <span class="logo-text">LOGO</span>
+    </div>
+      
+
+    <!-- Sidebar and Tabs -->
+    <div class="box flex-center1 tabs-group sidebar">
+      <!-- Close Button for Sidebar -->
+      <div class="flex-center1 icon-wrapper cancel-btn" onclick="toggleSidebar()">
+        &#x2715; <!-- Close Icon (FaTimes equivalent) -->
+      </div>
+
+      <!-- Tabs -->
+      <a href="#home" class="bg-custom-pink text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white py-2 px-3 sm:px-6 md:px-8 rounded-full shadow-md hover:bg-pink-400 transition tab">
+        Home
+      </a>
+      <a href="#events" class="bg-custom-pink text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white py-2 px-3 sm:px-6 md:px-8 rounded-full shadow-md hover:bg-pink-400 transition tab">
+        Events
+      </a>
+      <a href="#hiking-group" class="bg-custom-pink text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white py-2 px-3 sm:px-6 md:px-8 rounded-full shadow-md hover:bg-pink-400 transition tab">
+        Hiking Group
+      </a>
+      <a href="#game-night" class="bg-custom-pink text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white py-2 px-3 sm:px-6 md:px-8 rounded-full shadow-md hover:bg-pink-400 transition tab">
+        Game Night
+      </a>
+    </div>
+
+    <!-- Buttons and Menu Icon -->
+    <div class="box flex-center1 buttons">
+      <div class="flex-center1 icon-wrapper menu-btn" onclick="toggleSidebar()">
+        &#9776; <!-- Menu Icon (HiMenu equivalent) -->
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const overlay = document.querySelector('.overlay');
+    const sidebar = document.querySelector('.sidebar');
+
+    function toggleSidebar() {
+      const isVisible = sidebar.classList.contains('visible');
+      if (isVisible) {
+        sidebar.classList.remove('visible');
+        overlay.style.display = 'none';
+      } else {
+        sidebar.classList.add('visible');
+        overlay.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
